@@ -7,10 +7,14 @@ import { IonicPage } from 'ionic-angular/navigation/ionic-page';
   selector: 'page-home',
   templateUrl: 'home.html'
 })
-export class HomePage {
+export class HomePage { //nome da pagina
 
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController) { // injecao de dependencia como parametro do construtor
 
+  }
+
+  login(){
+    this.navCtrl.setRoot('CategoriasPage') //push, metodo que empilha uma pagina na outra
   }
 
 }
