@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { MenuController, NavController } from 'ionic-angular';
 import { IonicPage } from 'ionic-angular/navigation/ionic-page';
 import { CredenciaisDTO } from '../../models/credenciais.dto';
+import { AuthService } from '../../services/auth.service';
 
 @IonicPage() //Faz com que se possa referenciar a classe como uma string entre aspas "HomePage"
 @Component({
@@ -17,7 +18,8 @@ export class HomePage { //nome da pagina
 
   constructor(
     public navCtrl: NavController, 
-    public menu: MenuController
+    public menu: MenuController,
+    public auth: AuthService
     ) { // injecao de dependencia como parametro do construtor
 
   }
@@ -30,8 +32,12 @@ export class HomePage { //nome da pagina
   }
 
   login(){
-    console.log(this.creds);
-    this.navCtrl.setRoot('CategoriasPage') //push, metodo que empilha uma pagina na outra
+    this.auth.authenticate(this.creds)
+    .subscribe(response => {
+      console.log(response.headers.get('Authorization'));
+      this.navCtrl.setRoot('CategoriasPage') //push, metodo que empilha uma pagina na outra
+    },
+    error  => {}); 
   }
 
 }
