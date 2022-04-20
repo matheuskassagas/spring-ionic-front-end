@@ -27,9 +27,7 @@ export class CategoriasPage {
     .subscribe(response => { //inscrever para quando a resposta chegar eu excultar
       this.items = response;
     },
-    error => {
-      console.log(error);
-    });
+    error => {});
     
   }
 
