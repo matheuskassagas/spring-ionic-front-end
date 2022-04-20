@@ -5,11 +5,16 @@
   <form>
     <ion-item>
       <ion-label stacked>Email</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input [(ngModel)]="creds.email" name="email" type="text"></ion-input>
+      <!-- //biding de evento() e atributo[], associando o meu creds em home.ts-->
     </ion-item>
     <ion-item>
       <ion-label stacked>Senha</ion-label>
-      <ion-input type="password"></ion-input>
+      <ion-input
+        [(ngModel)]="creds.senha"
+        name="senha"
+        type="password"
+      ></ion-input>
     </ion-item>
     <button ion-button block (click)="login()">Entrar</button>
     <!-- //click é o binding de eventos, associando o meu metodo de login com o clique do botão-->

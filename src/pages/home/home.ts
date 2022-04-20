@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { MenuController, NavController } from 'ionic-angular';
 import { IonicPage } from 'ionic-angular/navigation/ionic-page';
+import { CredenciaisDTO } from '../../models/credenciais.dto';
 
 @IonicPage() //Faz com que se possa referenciar a classe como uma string entre aspas "HomePage"
 @Component({
@@ -8,6 +9,11 @@ import { IonicPage } from 'ionic-angular/navigation/ionic-page';
   templateUrl: 'home.html'
 })
 export class HomePage { //nome da pagina
+
+  creds : CredenciaisDTO = {
+    email: "",
+    senha: ""
+  };
 
   constructor(
     public navCtrl: NavController, 
@@ -24,6 +30,7 @@ export class HomePage { //nome da pagina
   }
 
   login(){
+    console.log(this.creds);
     this.navCtrl.setRoot('CategoriasPage') //push, metodo que empilha uma pagina na outra
   }
 
