@@ -8,6 +8,7 @@ import { StorageService } from "./storage.service";
 @Injectable()
 export class AuthService{
 
+
   constructor(public http: HttpClient,
     public storage: StorageService){ // httpCliente que faz a requisição
   }
