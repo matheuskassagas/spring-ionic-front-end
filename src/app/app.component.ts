@@ -20,7 +20,8 @@ export class MyApp {
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Home', component: 'HomePage' } //utilizando o nome da classe como string, nao precisando importar a classe da pagina
+      { title: 'Profile', component: 'ProfilePage' },
+      { title: 'Categorias', component: 'CategoriasPage' } //utilizando o nome da classe como string, nao precisando importar a classe da pagina
     ];
 
   }
