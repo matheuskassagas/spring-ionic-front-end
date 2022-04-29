@@ -4,7 +4,7 @@ import { Observable } from "rxjs/Rx";
 import { API_CONFIG } from "../config/api.config";
 import { StorageService } from "../services/storage.service";
 
-@Injectable()
+@Injectable() // intercepetor para incluir token nas requisições
 export class AuthInterceptor implements HttpInterceptor{
 
   constructor(public storage: StorageService){
