@@ -49,4 +49,7 @@ export class HomePage { //nome da pagina
     error  => {}); 
   }
 
+  signup() {
+    this.navCtrl.push('SignupPage');
+  }
 }
