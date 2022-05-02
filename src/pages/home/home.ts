@@ -31,6 +31,15 @@ export class HomePage { //nome da pagina
     this.menu.swipeEnable(true);
   }
 
+  ionViewDidEnter() {
+    this.auth.refreshToken(this.creds)
+    .subscribe(response => {
+      this.auth.sucessfulLogin(response.headers.get('Authorization'));
+      this.navCtrl.setRoot('CategoriasPage') //push, metodo que empilha uma pagina na outra
+    },
+    error  => {}); 
+  }
+
   login(){
     this.auth.authenticate(this.creds)
     .subscribe(response => {

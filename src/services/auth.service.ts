@@ -26,6 +26,16 @@ export class AuthService{
         });
   }
 
+  refreshToken(creds : CredenciaisDTO){
+    return this.http.post(
+      `${API_CONFIG.baseUrl}/refresh_token`,{},
+      {
+        observe: 'response', //preciso pegar o header da resposta, assim tendo acesso a ele
+        responseType: 'text' //evitar o erro de parse de json, pois o endpoint restorna um corpo vazio
+
+      });
+}
+
   sucessfulLogin (authorizationValue : string){ //armazenando usuario no localStorage
       let tok = authorizationValue.substring(7); //pegando o token a partir da setima letra
       let user : LocalUser = {
