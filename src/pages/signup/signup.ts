@@ -67,11 +67,13 @@ export class SignupPage {
       error => {});
   }
   signupUser(){
-    this.clienteService.insert(this.formGroup.value)//formGroup contendo os dados do formulario. 
+    this.clienteService.insert(this.formGroup.value)
     .subscribe(response => {
       this.showInsertOk();
+
     },
     error => {});
+   
    }
 
 
