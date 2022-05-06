@@ -56,4 +56,12 @@ export class CartPage {
     return this.cartService.total();
   }
 
+  goOn(){
+    this.navCtrl.setRoot('CatehoriasPage');
+  }
+
+  checkout(){
+    this.navCtrl.push('PickAddressPage');
+  }
+
 }
