@@ -19,10 +19,10 @@ export class ProdutosPage {
   }
 
   ionViewDidLoad() {
-    let categoria_id = this.navParams.get('categoria_id'); //nav pega o id do htlm 
+    let categoria_id = this.navParams.get('categoria_id');
     this.produtoService.findByCategoria(categoria_id)
-    .subscribe(response => { // resposta chega paginada
-      this.items = response['content'];
+      .subscribe(response => {
+        this.items = response['content'];
       this.loadImageUrls();
     },
     error => {});
@@ -37,9 +37,9 @@ export class ProdutosPage {
         },
         error => {});
     }
-  } 
+  }
 
-  showDetail(){
-    this.navCtrl.push('ProdutoDetailPage');
+  showDetail(produto_id : string) {
+    this.navCtrl.push('ProdutoDetailPage', {produto_id: produto_id});
   }
 }
