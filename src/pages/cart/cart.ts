@@ -57,7 +57,7 @@ export class CartPage {
   }
 
   goOn(){
-    this.navCtrl.setRoot('CatehoriasPage');
+    this.navCtrl.setRoot('CategoriasPage');
   }
 
   checkout(){
