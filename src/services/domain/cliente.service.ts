@@ -12,10 +12,6 @@ export class ClienteService {
     public storage: StorageService) {
 
   }
-
-  findById(email: string) {
-    return this.http.get(`${API_CONFIG.baseUrl}/clientes/${email}`);
-}
     //let token = this.storage.getLocalUser().token; // busca token armazenado no localStore
     //let authHeader = new HttpHeaders({'Authorization': 'Bearer ' + token}); // instancia para colocar o valor do token no header da solicitação
     //{'headers': authHeader}); //passando o cabeçalho para a requisiçã
